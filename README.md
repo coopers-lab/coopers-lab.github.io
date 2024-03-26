@@ -1,1 +1,1 @@
-# Website Live at https://www.cjp-digital.com
+# yes i own vsco.one for some reason
